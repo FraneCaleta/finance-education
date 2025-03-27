@@ -27,7 +27,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         </main>
         <footer className="bg-gray-800 text-white py-6">
           <div className="container mx-auto px-4 md:px-0 text-center">
-            <p>© 2023 My Finance App. All rights reserved.</p>
+            <p>© 2025 My Finance App. All rights reserved.</p>
             <p>
               Follow us on{" "}
               <a href="#" className="hover:underline">
