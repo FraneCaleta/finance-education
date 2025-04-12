@@ -4,42 +4,56 @@ import { useState, useRef, useEffect } from "react";
 
 export default function DropdownMenu() {
   const [isOpen, setIsOpen] = useState(false);
-  const dropdownRef = useRef<HTMLDivElement>(null);
+  const timeoutRef = useRef<NodeJS.Timeout | undefined>(undefined);
+
+  const handleMouseEnter = () => {
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current);
+    }
+    setIsOpen(true);
+  };
+
+  const handleMouseLeave = () => {
+    timeoutRef.current = setTimeout(() => {
+      setIsOpen(false);
+    }, 150); // Small delay to allow movement to submenu
+  };
 
   useEffect(() => {
-    function handleClickOutside(event: MouseEvent) {
-      if (
-        dropdownRef.current &&
-        !dropdownRef.current.contains(event.target as Node)
-      ) {
-        setIsOpen(false);
+    return () => {
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current);
       }
-    }
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => document.removeEventListener("mousedown", handleClickOutside);
+    };
   }, []);
 
   return (
-    <div ref={dropdownRef} className="relative">
-      <button className="hover:underline" onClick={() => setIsOpen(!isOpen)}>
+    <div className="relative">
+      <button
+        className="hover:underline py-2"
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
+      >
         Tracking
       </button>
       <div
-        className={`absolute left-0 mt-2 bg-gray-800 rounded shadow-lg p-2 w-40 transition-all duration-200 ${
+        className={`absolute left-0 mt-0 py-2 w-40 bg-gray-800 rounded-md shadow-xl transition-all duration-200 ${
           isOpen
-            ? "opacity-100 visible"
-            : "opacity-0 invisible pointer-events-none"
+            ? "opacity-100 visible translate-y-0"
+            : "opacity-0 invisible -translate-y-1"
         }`}
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
       >
         <a
           href="/tracking/stocks"
-          className="block py-2 px-4 hover:bg-gray-700 rounded"
+          className="block px-4 py-2 hover:bg-gray-700 text-white"
         >
           Stocks
         </a>
         <a
           href="/tracking/crypto"
-          className="block py-2 px-4 hover:bg-gray-700 rounded"
+          className="block px-4 py-2 hover:bg-gray-700 text-white"
         >
           Crypto
         </a>
