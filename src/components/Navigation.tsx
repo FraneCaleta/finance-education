@@ -26,6 +26,9 @@ export default function Navigation() {
           <a href="/blog" className="hover:underline">
             Blog
           </a>
+          <a href="/posts" className="hover:underline">
+            Posts
+          </a>
           <DropdownMenu />
         </nav>
       </div>
@@ -39,6 +42,9 @@ export default function Navigation() {
             </a>
             <a href="/blog" className="hover:bg-gray-700 p-2 rounded">
               Blog
+            </a>
+            <a href="/posts" className="hover:bg-gray-700 p-2 rounded">
+              Posts
             </a>
             <div className="p-2">
               <span className="text-gray-400">Tracking</span>
