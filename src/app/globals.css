@@ -24,6 +24,10 @@
   body.menu-open {
     overflow: hidden;
   }
+
+  .container {
+    padding: 0 1rem;
+  }
 }
 
 body {
@@ -52,3 +56,15 @@ body {
     line-height: 1.5;
   }
 }
+
+/* Ensure footer content stays within bounds */
+@media (max-width: 640px) {
+  footer .flex {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+}
+
+/* No changes needed here for the blur, as Tailwind's backdrop-blur-sm and bg-black/10 handle it. 
+   Just ensure you don't have any CSS that would override the overlay's backdrop-blur or z-index. */

@@ -1,6 +1,7 @@
 import "./globals.css";
 import { ReactNode } from "react";
 import { Geist, Geist_Mono } from "next/font/google";
+import ClientBoundary from "@/components/ClientBoundary";
 import Navigation from "@/components/Navigation";
 
 const geistSans = Geist({
@@ -19,7 +20,9 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       >
         <header className="bg-gray-800 text-white p-4">
           <div className="container mx-auto px-4 md:px-0">
-            <Navigation />
+            <ClientBoundary>
+              <Navigation />
+            </ClientBoundary>
           </div>
         </header>
         <main className="flex-grow">
@@ -28,10 +31,10 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <footer className="bg-gray-800 text-white py-6">
           <div className="container mx-auto px-4 md:px-0 text-center">
             <p>© 2025 My Finance App. All rights reserved.</p>
-            <div className="flex justify-center space-x-4 mt-4">
+            <div className="flex flex-wrap justify-center items-center gap-4 mt-4">
               <a
                 href="#"
-                className="hover:underline flex items-center space-x-2"
+                className="hover:bg-gray-700 flex items-center gap-2 p-2 rounded transition-colors"
                 aria-label="Follow us on X"
               >
                 <svg
@@ -46,7 +49,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
               </a>
               <a
                 href="#"
-                className="hover:underline flex items-center space-x-2"
+                className="hover:bg-gray-700 flex items-center gap-2 p-2 rounded transition-colors"
                 aria-label="Follow us on LinkedIn"
               >
                 <svg
@@ -61,7 +64,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
               </a>
               <a
                 href="#"
-                className="hover:underline flex items-center space-x-2"
+                className="hover:bg-gray-700 flex items-center gap-2 p-2 rounded transition-colors"
                 aria-label="Follow us on Facebook"
               >
                 <svg
@@ -76,7 +79,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
               </a>
               <a
                 href="#"
-                className="hover:underline flex items-center space-x-2"
+                className="hover:bg-gray-700 flex items-center gap-2 p-2 rounded transition-colors"
                 aria-label="Follow us on Instagram"
               >
                 <svg
@@ -91,7 +94,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
               </a>
               <a
                 href="#"
-                className="hover:underline flex items-center space-x-2"
+                className="hover:bg-gray-700 flex items-center gap-2 p-2 rounded transition-colors"
                 aria-label="Follow us on TikTok"
               >
                 <svg
