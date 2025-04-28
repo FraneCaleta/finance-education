@@ -30,8 +30,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         </main>
         <footer className="bg-gray-800 text-white py-6">
           <div className="container mx-auto px-4 md:px-0 text-center">
-            <p>© 2025 My Finance App. All rights reserved.</p>
-            <div className="flex flex-wrap justify-center items-center gap-4 mt-4">
+            <div className="flex flex-wrap justify-center items-center gap-4 mb-4">
               <a
                 href="#"
                 className="hover:bg-gray-700 flex items-center gap-2 p-2 rounded transition-colors"
@@ -108,6 +107,14 @@ export default function RootLayout({ children }: { children: ReactNode }) {
                 <span>TikTok</span>
               </a>
             </div>
+            <hr className="border-gray-700 mb-4" />
+            <p className="text-gray-400">
+              © 2025 My Finance App. All rights reserved.
+            </p>
+            <p className="text-gray-500 text-xs mt-2">
+              Built with ❤️ for the finance community. Stay connected and follow
+              us for updates!
+            </p>
           </div>
         </footer>
       </body>
