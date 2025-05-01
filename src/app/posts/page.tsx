@@ -91,13 +91,13 @@ export default function Posts() {
         Community Posts
       </h1>
       <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-8 gap-4">
-        <p className="text-gray-300 text-lg">
+        <p className="text-gray-300 text-lg max-w-[75%]">
           Discover tips, stories, and advice from our finance community. Click a
           post to read more or share your own experience!
         </p>
         <a
           href="#"
-          className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-6 rounded-full shadow transition transform hover:-translate-y-1 hover:scale-105"
+          className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold py-4 px-8 rounded-full shadow transition transform hover:-translate-y-1 hover:scale-105 whitespace-nowrap"
         >
           + Write a Post
         </a>
