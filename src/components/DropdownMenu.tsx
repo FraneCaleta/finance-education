@@ -20,13 +20,13 @@ export default function DropdownMenu({ gradientLink }: DropdownMenuProps) {
       >
         <a
           href="/tracking/stocks"
-          className="block px-4 py-2 rounded font-extrabold tracking-tight text-white hover:bg-gray-700"
+          className="block px-4 py-2 rounded font-extrabold tracking-tight text-blue-400 hover:bg-gray-700"
         >
           Stocks
         </a>
         <a
           href="/tracking/crypto"
-          className="block px-4 py-2 rounded font-extrabold tracking-tight text-white hover:bg-gray-700"
+          className="block px-4 py-2 rounded font-extrabold tracking-tight text-purple-400 hover:bg-gray-700"
         >
           Crypto
         </a>
