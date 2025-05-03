@@ -1,59 +1,32 @@
-"use client";
+interface DropdownMenuProps {
+  gradientLink: string;
+}
 
-import { useState, useRef, useEffect } from "react";
-
-export default function DropdownMenu() {
-  const [isOpen, setIsOpen] = useState(false);
-  const timeoutRef = useRef<NodeJS.Timeout | undefined>(undefined);
-
-  const handleMouseEnter = () => {
-    if (timeoutRef.current) {
-      clearTimeout(timeoutRef.current);
-    }
-    setIsOpen(true);
-  };
-
-  const handleMouseLeave = () => {
-    timeoutRef.current = setTimeout(() => {
-      setIsOpen(false);
-    }, 150); // Small delay to allow movement to submenu
-  };
-
-  useEffect(() => {
-    return () => {
-      if (timeoutRef.current) {
-        clearTimeout(timeoutRef.current);
-      }
-    };
-  }, []);
-
+export default function DropdownMenu({ gradientLink }: DropdownMenuProps) {
   return (
-    <div className="relative">
-      <button
-        className="hover:underline py-2"
-        onMouseEnter={handleMouseEnter}
-        onMouseLeave={handleMouseLeave}
+    <div className="relative group">
+      <a
+        href="#"
+        className={`py-2 ${gradientLink} focus:outline-none`}
+        tabIndex={0}
+        aria-haspopup="true"
+        aria-expanded="false"
       >
         Tracking
-      </button>
+      </a>
       <div
-        className={`absolute left-0 mt-0 py-2 w-40 bg-gray-800 rounded-md shadow-xl transition-all duration-200 ${
-          isOpen
-            ? "opacity-100 visible translate-y-0"
-            : "opacity-0 invisible -translate-y-1"
-        }`}
-        onMouseEnter={handleMouseEnter}
-        onMouseLeave={handleMouseLeave}
+        className="absolute left-0 mt-0 py-2 w-40 bg-gray-800 rounded-md shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible group-focus-within:opacity-100 group-focus-within:visible transition-all duration-200 z-20"
+        tabIndex={-1}
       >
         <a
           href="/tracking/stocks"
-          className="block px-4 py-2 hover:bg-gray-700 text-white"
+          className="block px-4 py-2 rounded font-extrabold tracking-tight text-white hover:bg-gray-700"
         >
           Stocks
         </a>
         <a
           href="/tracking/crypto"
-          className="block px-4 py-2 hover:bg-gray-700 text-white"
+          className="block px-4 py-2 rounded font-extrabold tracking-tight text-white hover:bg-gray-700"
         >
           Crypto
         </a>

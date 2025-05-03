@@ -1,91 +1,53 @@
-"use client";
-
-import { useState } from "react";
 import DropdownMenu from "./DropdownMenu";
 
-export default function Navigation() {
-  const [menuOpen, setMenuOpen] = useState(false);
+const gradientLink =
+  "bg-gradient-to-r from-green-400 via-blue-500 to-purple-500 bg-clip-text text-transparent font-extrabold hover:underline";
 
+export default function Navigation() {
   return (
     <div className="relative">
       <div className="flex justify-between items-center">
-        <a href="/" className="text-2xl font-bold flex items-center gap-2">
-          <span>📊</span> My Finance App
-        </a>
-        {/* Always render the burger button, just hide on desktop */}
-        <button
-          className="block md:hidden p-2 hover:bg-gray-700 rounded text-xl"
-          onClick={() => setMenuOpen(true)}
-          aria-label="Open menu"
-          type="button"
+        <a
+          href="/"
+          className="text-2xl font-extrabold flex items-center gap-3 tracking-tight bg-gradient-to-r from-green-400 via-blue-500 to-purple-500 bg-clip-text text-transparent"
         >
-          ☰
-        </button>
-        <nav className="hidden md:flex gap-6 text-lg items-center">
-          <a href="/education" className="hover:underline">
+          <svg
+            width="32"
+            height="32"
+            viewBox="0 0 32 32"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            className="w-8 h-8"
+          >
+            <rect x="3" y="17" width="4" height="10" rx="2" fill="#34D399" />
+            <rect x="10" y="11" width="4" height="16" rx="2" fill="#60A5FA" />
+            <rect x="17" y="6" width="4" height="21" rx="2" fill="#A78BFA" />
+            <rect x="24" y="3" width="4" height="24" rx="2" fill="#F472B6" />
+          </svg>
+          My Finance App
+        </a>
+        <nav className="flex gap-6 text-lg items-center">
+          <a
+            href="/education"
+            className="bg-gradient-to-r from-green-400 via-blue-500 to-purple-500 bg-clip-text text-transparent font-extrabold hover:underline"
+          >
             Education
           </a>
-          <a href="/blog" className="hover:underline">
+          <a
+            href="/blog"
+            className="bg-gradient-to-r from-green-400 via-blue-500 to-purple-500 bg-clip-text text-transparent font-extrabold hover:underline"
+          >
             Blog
           </a>
-          <a href="/posts" className="hover:underline">
+          <a
+            href="/posts"
+            className="bg-gradient-to-r from-green-400 via-blue-500 to-purple-500 bg-clip-text text-transparent font-extrabold hover:underline"
+          >
             Posts
           </a>
-          <DropdownMenu />
+          <DropdownMenu gradientLink="bg-gradient-to-r from-green-400 via-blue-500 to-purple-500 bg-clip-text text-transparent font-extrabold hover:underline" />
         </nav>
       </div>
-
-      {/* Mobile menu */}
-      {menuOpen && (
-        <div className="md:hidden fixed top-[72px] right-0 w-[50vw] max-w-xs h-[calc(100vh-72px)] bg-gray-800 p-4 z-50 border-l border-gray-700">
-          <div className="flex flex-col gap-4">
-            {/* Close icon inside the menu for accessibility */}
-            <button
-              className="self-end mb-2 p-2 rounded hover:bg-gray-700 text-2xl"
-              onClick={() => setMenuOpen(false)}
-              aria-label="Close menu"
-              type="button"
-            >
-              ✕
-            </button>
-            <a
-              href="/education"
-              className="hover:bg-gray-700 p-3 rounded text-lg"
-            >
-              Education
-            </a>
-            <a href="/blog" className="hover:bg-gray-700 p-3 rounded text-lg">
-              Blog
-            </a>
-            <a href="/posts" className="hover:bg-gray-700 p-3 rounded text-lg">
-              Posts
-            </a>
-            <div className="p-2">
-              <span className="text-gray-400 text-lg">Tracking</span>
-              <a
-                href="/tracking/stocks"
-                className="block hover:bg-gray-700 p-3 rounded mt-2 pl-4 text-lg"
-              >
-                Stocks
-              </a>
-              <a
-                href="/tracking/crypto"
-                className="block hover:bg-gray-700 p-3 rounded mt-2 pl-4 text-lg"
-              >
-                Crypto
-              </a>
-            </div>
-          </div>
-        </div>
-      )}
-
-      {/* Overlay */}
-      {menuOpen && (
-        <div
-          className="md:hidden fixed inset-0 z-40 backdrop-blur-sm bg-black/10"
-          onClick={() => setMenuOpen(false)}
-        />
-      )}
     </div>
   );
 }
