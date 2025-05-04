@@ -68,8 +68,6 @@ We welcome contributions from the community! To contribute:
 4. **Ensure all tests pass** (`npm test` or `yarn test`).
 5. **Submit a pull request** describing your changes.
 
-Please read our [CONTRIBUTING.md](CONTRIBUTING.md) for more details.
-
 ## License
 
 This project is licensed under the MIT License.
