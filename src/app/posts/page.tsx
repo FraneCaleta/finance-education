@@ -2,6 +2,7 @@
 
 import PostCard from "../../components/PostCard";
 import { useState, useRef } from "react";
+import SectionHeading from "@/components/SectionHeading";
 
 interface Post {
   id: string;
@@ -87,9 +88,7 @@ export default function Posts() {
 
   return (
     <section className="max-w-4xl mx-auto">
-      <h1 className="text-3xl md:text-4xl font-bold mb-6 text-white text-center drop-shadow">
-        Community Posts
-      </h1>
+      <SectionHeading>Community Posts</SectionHeading>
       <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-8 gap-4">
         <p className="text-gray-300 text-lg max-w-[75%]">
           Discover tips, stories, and advice from our finance community. Click a

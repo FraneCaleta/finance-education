@@ -1,5 +1,7 @@
 "use client";
 
+import SectionHeading from "@/components/SectionHeading";
+
 export default function Home() {
   return (
     <section className="flex flex-col items-center justify-center min-h-[70vh] text-center relative overflow-hidden">
@@ -10,9 +12,7 @@ export default function Home() {
         <div className="absolute bottom-0 left-[-10%] w-[40vw] h-[40vw] bg-green-500 opacity-10 rounded-full blur-3xl" />
       </div>
       <div className="relative z-10 w-full flex flex-col items-center">
-        <h1 className="text-4xl md:text-6xl font-extrabold mb-4 text-white drop-shadow-lg">
-          Welcome to <span className="text-blue-400">My Finance App</span>
-        </h1>
+        <SectionHeading>My Finance App</SectionHeading>
         <p className="text-lg md:text-2xl text-gray-300 max-w-2xl mb-10 drop-shadow">
           Take control of your financial future. Track your stocks and crypto,
           read expert blog posts, learn with our education hub, and join the
