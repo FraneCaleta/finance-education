@@ -1,9 +1,9 @@
-export default function StocksTracking() {
+import SectionHeading from "@/components/SectionHeading";
+
+export default function StocksTrackingPage() {
   return (
-    <section className="max-w-4xl mx-auto">
-      <h1 className="text-3xl md:text-4xl font-bold mb-6 text-white text-center">
-        Stock Tracking Dashboard
-      </h1>
+    <section className="max-w-4xl mx-auto px-4 py-6">
+      <SectionHeading>Track Stocks</SectionHeading>
       <div className="bg-gray-800 rounded-lg p-8 shadow-md border border-gray-700 mb-8">
         <h2 className="text-2xl font-semibold text-blue-300 mb-3">
           Why Track Your Stocks?

@@ -2,7 +2,7 @@ import SectionHeading from "@/components/SectionHeading";
 
 export default function Education() {
   return (
-    <section className="max-w-4xl mx-auto px-4 py-10">
+    <section className="max-w-4xl mx-auto px-4 py-6">
       <SectionHeading>Finance & Investing Basics</SectionHeading>
       <div className="bg-gray-800 rounded-lg p-8 shadow-md border border-gray-700 mb-10">
         <h2 className="text-2xl font-semibold text-blue-300 mb-3">

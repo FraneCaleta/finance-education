@@ -93,7 +93,7 @@ const articles = [
 
 export default function BlogPage() {
   return (
-    <section className="max-w-5xl mx-auto px-4 py-12 animate-fade-in">
+    <section className="max-w-5xl mx-auto px-4 py-6 animate-fade-in">
       <SectionHeading>Finance Blog & Insights</SectionHeading>
       <div className="flex flex-col md:flex-row md:justify-between items-center mb-10 gap-4">
         <h2 className="text-2xl font-semibold text-blue-300">
