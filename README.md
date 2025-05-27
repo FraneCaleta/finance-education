@@ -22,8 +22,8 @@ My Finance App is an open-source web application designed to help users manage t
 1. **Clone the repository:**
 
    ```bash
-   git clone https://github.com/yourusername/my-finance-app.git
-   cd my-finance-app
+   git clone https://github.com/franecaleta/finance-education.git
+   cd finance-education
    ```
 
 2. **Install dependencies:**
