@@ -4,11 +4,11 @@ My Finance App is an open-source web application designed to help users manage t
 
 ## Features
 
-- Track income and expenses
-- Categorize transactions
-- Visualize spending with charts and reports
-- Manage budgets and savings goals
-- Responsive design for desktop and mobile
+- 💸 **Track Income & Expenses** – Stay on top of your financial flow with ease.
+- 🏷️ **Categorize Transactions** – Organize your spending with customizable categories.
+- 📊 **Visualize Spending** – Gain insights with interactive charts and detailed reports.
+- 🎯 **Budgets & Savings Goals** – Set, monitor, and achieve your financial targets.
+- 📱 **Responsive Design** – Enjoy a seamless experience on desktop and mobile devices.
 
 ## Getting Started
 
